@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 ReactDOM.render(
   <div>
     <h1>Hello World!</h1>
-    <p>unga tygor</p>
+    <p>hoy tygor</p>
   </div>,
   document.getElementById("root")
 );
