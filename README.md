@@ -1,2 +1,2 @@
 # JSX_practice
-Created with CodeSandbox
+A throw at react javascript.
