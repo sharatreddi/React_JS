@@ -1,4 +1,4 @@
-//Created inline styles, and also declared an obj and called it in heading inline style
+//Created inline styles, and also declared an obj and called it in heading inline style, added few more to em, like conditional statements , that changes the colors dynamically
 import React from "react";
 import ReactDOM from "react-dom";
 
