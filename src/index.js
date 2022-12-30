@@ -1,30 +1,20 @@
-//Create a react app from scratch.
-//It should display a h1 heading.
-//It should display an unordered list (bullet points).
-//It should contain 3 list elements.
+//Created inline styles, and also declared an obj and called it in heading inline style
 
 import React from "react";
 import ReactDOM from "react-dom";
 
-const img =
-  "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
+// ---------------------main part--------------------
+// we create inline Styles, we shld give "" coz in JSON, it takes as a string
+// also we create an object here and then call it in inline styles
+const customStyle = {
+  color: "blue",
+  fontSize: "25px",
+  border: "1px solid black"
+};
 
 ReactDOM.render(
   <div>
-    <h1>My Favorite things</h1>
-    <div>
-      <img
-        alt="man"
-        className="pic"
-        src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80"
-      />
-      <img
-        alt="woman"
-        className="pic"
-        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-      />
-      <img alt="man" className="pic" src={img + "?grayscale"} />
-    </div>
+    <h1 style={customStyle}>My Fav things</h1>
   </div>,
   document.getElementById("root")
 );
