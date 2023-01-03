@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
-// ------------------------------------------what happened anedhi---------------------------------------
-//so ikkad em jarigindh ante, we created components namely aapp.jsx and heading.jsx, heading.jsx loki
-// mottham code shift chesam, app.jsx lo heading ni call chestham, and in original javascript file(index.js) lo app ni pilustham
+// import {add, multiply, subtract, divide} from "./calculator";
+import * as calc from "./calculator";
 
 ReactDOM.render(
-  <div>
-    <App />
-  </div>,
+  <ul>
+    <li>{calc.add(1, 2)}</li>
+    <li>{calc.multiply(2, 3)}</li>
+    <li>{calc.subtract(7, 2)}</li>
+    <li>{calc.divide(5, 2)}</li>
+  </ul>,
   document.getElementById("root")
 );
