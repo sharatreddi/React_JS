@@ -1,24 +1,13 @@
 import React from "react";
-import Emojipedia from "../emojipedia";
-import Emoji from "./Emoji";
+import Form from "./Form";
+
+//change it to true here and u'll see how the form changes
+var userIsRegistered = false;
 
 function App() {
   return (
-    <div>
-      <h1>
-        <span>emojipedia</span>
-      </h1>
-
-      <dl className="dictionary">
-        {Emojipedia.map((emojee) => (
-          <Emoji
-            key={emojee.id}
-            emoji={emojee.emoji}
-            name={emojee.name}
-            meaning={emojee.meaning}
-          />
-        ))}
-      </dl>
+    <div className="container">
+      <Form isRegistered={userIsRegistered} />
     </div>
   );
 }
