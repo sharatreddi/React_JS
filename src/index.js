@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
-import Card from "./components/Card";
-// ------------------------------------------what happened anedhi(react dev tools)---------------------------------------
-//so ikkad em jarigindh ante, I mapped data to componentd
-// ------------------------------------------what happened in mapping data to components---------------------------------------
-//Here, in this, we used map function, it is used to parse each and every element of an array(basically designed fot it)
-//This map basically takes a function as an input, and that happened to be our createEmoji function in app.jsx which calls emoji.jsx and every
-//element in emojipedia.js is rendered.
+
+// ------------------------------------------what happened in UseState hook---------------------------------------
+//Here, The useState hook is a special function that takes the initial state as an argument and returns an array of two entries
+//one is assume count and other is setCount, we can manipulate the value of first one(count) using the special function
+//Go thru the code once, made that increase and decrease count(uncomment them), and also get time thing(comment that setInterval thing and press on get time to see the time gettin updated)
 
 ReactDOM.render(
   <div>
