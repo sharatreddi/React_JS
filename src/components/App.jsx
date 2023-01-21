@@ -1,24 +1,33 @@
-import React from "react";
-import Emojipedia from "../emojipedia";
-import Emoji from "./Emoji";
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 function App() {
-  return (
-    <div>
-      <h1>
-        <span>emojipedia</span>
-      </h1>
+  let time = new Date().toLocaleTimeString();
+  const [count, setCount] = useState(time);
+  console.log(time);
+  function showTime() {
+    let newTime = new Date().toLocaleTimeString();
+    setCount(newTime);
+  }
+  setInterval(showTime, 100);
 
-      <dl className="dictionary">
-        {Emojipedia.map((emojee) => (
-          <Emoji
-            key={emojee.id}
-            emoji={emojee.emoji}
-            name={emojee.name}
-            meaning={emojee.meaning}
-          />
-        ))}
-      </dl>
+  // function increase() {
+  //   setCount(count + 1);
+  //   // count++;
+  // }
+
+  // function decrease() {
+  //   setCount(count - 1);
+  //   // count--;
+  // }
+
+  return (
+    <div className="container">
+      {/* <h1>{count}</h1> */}
+      <h1>{count}</h1>
+      <button onClick={showTime}>Get Time</button>
+      {/* <button onClick={increase}>+</button>
+      <button onClick={decrease}>-</button> */}
     </div>
   );
 }
