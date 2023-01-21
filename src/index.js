@@ -1,15 +1,45 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
+import cars from "./practice";
 
-// ------------------------------------------what happened in UseState hook---------------------------------------
-//Here, The useState hook is a special function that takes the initial state as an argument and returns an array of two entries
-//one is assume count and other is setCount, we can manipulate the value of first one(count) using the special function
-//Go thru the code once, made that increase and decrease count(uncomment them), and also get time thing(comment that setInterval thing and press on get time to see the time gettin updated)
+// ------------------------------------------what happened in array/obj destructuring---------------------------------------
+//It is all aby how to destructure arrays or objects and render them as an individual components
+//its hell as tuff to explain, I mean, u'll be confused eitherways, just look thru the code and go thru vid 423,424
+console.log(cars);
+
+const [honda, tesla] = cars;
+console.log(honda);
+
+const {
+  speedStats: { topSpeed: hondaTopSpeed }
+} = honda;
+const {
+  speedStats: { topSpeed: teslaTopSpeed }
+} = tesla;
+
+const {
+  coloursByPopularity: [hondaTopColour]
+} = honda;
+const {
+  coloursByPopularity: [teslaTopColour]
+} = tesla;
 
 ReactDOM.render(
-  <div>
-    <App />
-  </div>,
+  <table>
+    <tr>
+      <th>Brand</th>
+      <th>Top Speed</th>
+    </tr>
+    <tr>
+      <td>{tesla.model}</td>
+      <td>{teslaTopSpeed}</td>
+      <td>{teslaTopColour}</td>
+    </tr>
+    <tr>
+      <td>{honda.model}</td>
+      <td>{hondaTopSpeed}</td>
+      <td>{hondaTopColour}</td>
+    </tr>
+  </table>,
   document.getElementById("root")
 );
