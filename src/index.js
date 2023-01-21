@@ -2,11 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 
-// ------------------------------------------what happened in UseState hook---------------------------------------
-//Here, The useState hook is a special function that takes the initial state as an argument and returns an array of two entries
-//one is assume count and other is setCount, we can manipulate the value of first one(count) using the special function
-//Go thru the code once, made that increase and decrease count(uncomment them), and also get time thing(comment that setInterval thing and press on get time to see the time gettin updated)
-
+// ------------------------------------------what happened in Event handling of react---------------------------------------
+//Here, I dealt with some event handling of react
+//created a button, when it is hovered, turns black and white when not, here i did it using event handlers, inline styles, react hooks, use states
+//maintainin the state of our react code, we deal with event listeners, using ternary operations, go thru the code and if any doubts, refer vid 425.
 ReactDOM.render(
   <div>
     <App />

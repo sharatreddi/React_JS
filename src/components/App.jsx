@@ -1,33 +1,30 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 
 function App() {
-  let time = new Date().toLocaleTimeString();
-  const [count, setCount] = useState(time);
-  console.log(time);
-  function showTime() {
-    let newTime = new Date().toLocaleTimeString();
-    setCount(newTime);
+  const [click, setClick] = useState("hello");
+  function clicked() {
+    setClick("clicked");
   }
-  setInterval(showTime, 100);
-
-  // function increase() {
-  //   setCount(count + 1);
-  //   // count++;
-  // }
-
-  // function decrease() {
-  //   setCount(count - 1);
-  //   // count--;
-  // }
+  const [ismouseover, setmouseover] = useState(false);
+  function Mouseover() {
+    setmouseover(true);
+  }
+  function Mouseout() {
+    setmouseover(false);
+  }
 
   return (
     <div className="container">
-      {/* <h1>{count}</h1> */}
-      <h1>{count}</h1>
-      <button onClick={showTime}>Get Time</button>
-      {/* <button onClick={increase}>+</button>
-      <button onClick={decrease}>-</button> */}
+      <h1>{click}</h1>
+      <input type="text" placeholder="What's your name?" />
+      <button
+        style={{ backgroundColor: ismouseover ? "black" : "white" }}
+        onMouseOver={Mouseover}
+        onMouseOut={Mouseout}
+        onClick={clicked}
+      >
+        Submit
+      </button>
     </div>
   );
 }
