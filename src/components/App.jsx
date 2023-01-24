@@ -12,9 +12,10 @@ function App() {
     setmouseover(false);
   }
   // functions and states for displaying name after hello
-  const [fullname, setfullname] = useState({
+  const [details, setdetails] = useState({
     fname: "",
-    lname: ""
+    lname: "",
+    email: ""
   });
 
   // function handleChange(event) {
@@ -49,16 +50,24 @@ function App() {
     //refer vid 428 last for more clarity
     //refer the above code, if in case u did not understand thisbelow handlechange event
     //this one is a replica of the above code, but just destructured the event.target into respective things
-    setfullname((prevValue) => {
+    setdetails((prevValue) => {
       if (name === "fname") {
         return {
           fname: value,
-          lname: prevValue.lname
+          lname: prevValue.lname,
+          email: prevValue.email
         };
       } else if (name === "lname") {
         return {
           fname: prevValue.fname,
-          lname: value
+          lname: value,
+          email: prevValue.email
+        };
+      } else if (name === "email") {
+        return {
+          fname: prevValue.fname,
+          lname: prevValue.lname,
+          email: value
         };
       }
     });
@@ -66,29 +75,37 @@ function App() {
 
   const [headingText, setheadingText] = useState("");
   function clicked(event) {
-    console.log(fullname);
+    console.log(details);
     event.preventDefault();
   }
 
   return (
     <div className="container">
       <h1>
-        Hello {fullname.fname} {fullname.lname}
+        Hello {details.fname} {details.lname}
       </h1>
+      <p>{details.email}</p>
       <form onSubmit={clicked}>
         <input
           name="fname"
           onChange={handleChange}
-          value={fullname.fname}
+          value={details.fname}
           type="text"
           placeholder="What's your name?"
         />
         <input
           name="lname"
           onChange={handleChange}
-          value={fullname.lname}
+          value={details.lname}
           type="text"
           placeholder="What's your Last name?"
+        />
+        <input
+          name="email"
+          onChange={handleChange}
+          value={details.email}
+          type="text"
+          placeholder="Enter email"
         />
         <button
           type="submit"
