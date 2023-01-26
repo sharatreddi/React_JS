@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 
+//here we created a todo app
+//we basically created two react states, one for the input button, and the other for the add button
+//the input button takes the value and sets it
+//when the button is clicked we use a react state, store the prev values in an array (using spread operator)
+//then we render each of them down using map function
+
 function App() {
   const [todoitem, setTodoitem] = useState("");
   const [items, setitems] = useState([]);
